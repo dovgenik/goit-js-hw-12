@@ -3,12 +3,6 @@
     display: none;
 }
 
-body {
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    color: #434455;
-    background-color: #ffffff;
-}
 
 h1,
 h2,
@@ -54,14 +48,16 @@ button {
     overflow: hidden;
 }
 
+/* #endregion Common */
 
-/* #region Global */
+/* #region  */
 body {
     background-color: #fafafa;
     color: #212121;
     line-height: 1.5;
 
-    padding: 24px;
+    padding: 34px 10px 34px 10px;
+
 }
 
 
@@ -70,6 +66,8 @@ body {
     flex-direction: column;
     gap: 24px;
     height: auto;
+
+    max-width: 100%;
 }
 
 
@@ -93,9 +91,9 @@ body {
 /* Styles for Desktop devices */
 @media only screen and (min-width: 1200px) {
 
-    .gallery {
+    /* .gallery {
         max-width: 100%;
-    }
+    } */
 
     .gallery-item {
         width: calc((100% - 48px) / 3);
@@ -131,19 +129,6 @@ body {
     align-items: center;
 }
 
-.container-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    z-index: 1001;
-    position: fixed;
-    top: 0px;
-    left: 50vh;
-    transform: translate(50%, 0);
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
 
 .form {
     display: flex;
@@ -204,6 +189,37 @@ body {
     background: #6c8cff;
 }
 
+.body-container {
+    min-width: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+
+
+/* #region header */
+
+
+.header-container {
+    position: fixed;
+    z-index: 1001;
+    top: 7px;
+    left: 0px;
+    /* width: 100%; */
+    min-width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+/* #endregion header */
+
 
 
 /* #region Loader */
@@ -214,7 +230,7 @@ body {
     font-weight: bold;
     color: #0F0;
     position: relative;
-    
+
 }
 
 .loader::before {
@@ -241,4 +257,33 @@ body {
     }
 }
 
-/* end region Loader */
+/* #endregion Loader */
+
+.load-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    width: 125px;
+    height: 40px;
+
+    background-color: #4e75ff;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #fff;
+
+}
+
+.load-more:hover {
+    background-color: #6c8cff;
+}
