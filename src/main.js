@@ -20,7 +20,8 @@ document.querySelector('.form').addEventListener('submit', function (event) {
 
 
 document.querySelector('.load-more').addEventListener('click', function (event) {
-  
+  hideLoadMoreButton();
+
   mainVar.carrentPage += 1;
   
   axiosCall(mainVar.searchText, mainVar.carrentPage, mainVar.pageLen, axiosAfterTthenCall);

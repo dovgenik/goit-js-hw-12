@@ -22,6 +22,10 @@ export {
 let lightbox;
 
 function axiosAfterTthenCall(responseData) {
+  
+  createGalleryItem(responseData.hits);
+  lightboxRefresh();
+  
   if (responseData.totalHits > mainVar.carrentPage * mainVar.pageLen) {
     showLoadMoreButton();
   } else {
@@ -34,8 +38,7 @@ function axiosAfterTthenCall(responseData) {
     });
   }
 
-  createGalleryItem(responseData.hits);
-  lightboxRefresh();
+  
 }
 
 function deleteGalleryItem() {
