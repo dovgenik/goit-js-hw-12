@@ -27,19 +27,15 @@ function axiosAfterTthenCall(responseData) {
   } else {
     hideLoadMoreButton();
     iziToast.error({
-      message:
-        "We're sorry, but you've reached the end of search results.",
+      message: "We're sorry, but you've reached the end of search results.",
       close: true,
       timeout: 5000,
       position: 'topRight',
     });
-  };
-  
-
+  }
 
   createGalleryItem(responseData.hits);
   lightboxRefresh();
-  
 }
 
 function deleteGalleryItem() {
@@ -78,6 +74,14 @@ function createGalleryItem(arrayImgs) {
       fragment.appendChild(li);
     }
     parentUl.appendChild(fragment);
+  }
+
+  if (mainVar.carrentPage > 1) {
+    let scrollH = document
+      .querySelector('.gallery-item')
+      .getBoundingClientRect().height;
+
+    window.scrollBy({ left: 0, top: scrollH * 2, behavior: 'smooth' });
   }
 }
 

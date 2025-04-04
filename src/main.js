@@ -21,7 +21,6 @@ document.querySelector('.form').addEventListener('submit', function (event) {
 
 document.querySelector('.load-more').addEventListener('click', function (event) {
   
-  deleteGalleryItem();
   mainVar.carrentPage += 1;
   
   axiosCall(mainVar.searchText, mainVar.carrentPage, mainVar.pageLen, axiosAfterTthenCall);
